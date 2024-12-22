@@ -17,7 +17,11 @@ async function enableMocking() {
 
   // })
 
-  return worker.start()
+  return worker.start({
+    serviceWorker: {
+      url: import.meta.env.DEV ? '/mockServiceWorker.js' : '/sw.js',
+    },
+  })
 }
 // registerSW({ immediate: true })
 
