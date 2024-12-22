@@ -25,9 +25,21 @@ async function enableMocking() {
 }
 // registerSW({ immediate: true })
 
-enableMocking().then(() => {
-  // console.log(worker.listHandlers())
-  createApp(App).use(router).mount('#app')
+let hasRendered = false
+function render() {
+  if (!hasRendered) {
+    createApp(App).use(router).mount('#app')
+    hasRendered = true
+  }
+}
+
+const mocking = enableMocking()
+
+mocking.then(() => {
+  console.log('mocking finished!')
+  render()
 }).catch((err) => {
   console.error(err)
 })
+
+render()
