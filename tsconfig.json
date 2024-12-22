@@ -18,7 +18,8 @@
     },
     "resolveJsonModule": true,
     "types": [
-      "vitest/globals"
+      "vitest/globals",
+      "vite-plugin-pwa/client"
     ],
     "allowImportingTsExtensions": true,
     "strict": true,
