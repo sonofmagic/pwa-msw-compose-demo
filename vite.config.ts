@@ -13,7 +13,21 @@ export default defineConfig({
     vue(),
     VitePWA({
       // strategies: 'injectManifest',
+
       registerType: 'autoUpdate',
+      workbox: {
+        importScripts: ['/mockServiceWorker.js'],
+      },
     }),
+    {
+      name: 'test-plugin',
+      enforce: 'post',
+      generateBundle(_, bundles) {
+        console.log(Object.keys(bundles))
+      },
+    },
   ],
+  build: {
+    minify: false,
+  },
 })
