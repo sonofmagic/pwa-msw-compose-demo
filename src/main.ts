@@ -28,4 +28,6 @@ async function enableMocking() {
 enableMocking().then(() => {
   // console.log(worker.listHandlers())
   createApp(App).use(router).mount('#app')
+}).catch((err) => {
+  console.error(err)
 })
