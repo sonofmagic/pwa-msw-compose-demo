@@ -22,6 +22,10 @@ export default defineConfig({
       //   globIgnores: ['**\/node_modules\/**\/*', 'mockServiceWorker.js'],
 
       // },
+      workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
+      },
       manifest: {
         name: 'My Awesome App',
         short_name: 'MyApp',
