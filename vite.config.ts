@@ -23,8 +23,7 @@ export default defineConfig({
 
       // },
       workbox: {
-        skipWaiting: true,
-        clientsClaim: true,
+        importScripts: ['/mockServiceWorker.js'],
       },
       manifest: {
         name: 'My Awesome App',
