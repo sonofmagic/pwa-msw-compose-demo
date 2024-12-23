@@ -19,10 +19,13 @@ export default defineConfig({
         importScripts: ['/mockServiceWorker.js'],
         skipWaiting: true,
         globIgnores: ['**\/node_modules\/**\/*', 'mockServiceWorker.js'],
+
       },
       devOptions: {
         enabled: true,
+        type: 'module',
       },
+      injectRegister: null,
     }),
     {
       name: 'test-plugin',
