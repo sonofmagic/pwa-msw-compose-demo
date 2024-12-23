@@ -10,9 +10,9 @@ export const router = createRouter({
   routes,
 })
 
-export function registerPWA() {
-  router.isReady().then(async () => {
-    const { registerSW } = await import('virtual:pwa-register')
-    registerSW({ immediate: true })
-  })
-}
+// export function registerPWA() {
+//   router.isReady().then(async () => {
+//     const { registerSW } = await import('virtual:pwa-register')
+//     registerSW({ immediate: true })
+//   })
+// }

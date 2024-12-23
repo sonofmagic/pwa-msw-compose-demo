@@ -15,7 +15,7 @@ export default defineConfig({
       // strategies: 'injectManifest',
       // disable: true,
       registerType: 'autoUpdate',
-      selfDestroying: true,
+      // selfDestroying: true,
       // workbox: {
       //   importScripts: ['/mockServiceWorker.js'],
       //   skipWaiting: true,
