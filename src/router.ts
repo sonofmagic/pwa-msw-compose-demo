@@ -1,13 +1,9 @@
-// import type { Router } from 'vue-router'
-import AboutView from '@/pages/about.vue'
-
-import HomeView from '@/pages/index.vue'
-
+import type { Router } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/about', component: AboutView },
+  { path: '/', component: () => import('@/pages/index.vue') },
+  { path: '/about', component: () => import('@/pages/about.vue') },
 ]
 
 export const router = createRouter({
@@ -15,9 +11,9 @@ export const router = createRouter({
   routes,
 })
 
-// export function registerPWA(router: Router) {
-//   router.isReady().then(async () => {
-//     const { registerSW } = await import('virtual:pwa-register')
-//     registerSW({ immediate: true })
-//   })
-// }
+export function registerPWA(router: Router) {
+  router.isReady().then(async () => {
+    const { registerSW } = await import('virtual:pwa-register')
+    registerSW({ immediate: true })
+  })
+}
