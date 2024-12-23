@@ -14,7 +14,7 @@ export default defineConfig({
     VitePWA({
       // strategies: 'injectManifest',
       // disable: true,
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       // workbox: {
       //   importScripts: ['/mockServiceWorker.js'],
       //   skipWaiting: true,
