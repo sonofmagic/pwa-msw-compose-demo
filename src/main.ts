@@ -5,7 +5,28 @@ import App from './App.vue'
 import { registerPWA, router } from './router'
 import './style.scss'
 
-registerSW({ immediate: true })
+const intervalMS = 60 * 60 * 1000
+
+const updateSW = registerSW(
+  {
+    immediate: true,
+    onRegistered(r) {
+      r && setInterval(() => {
+        r.update()
+      }, intervalMS)
+    },
+  },
+)
+
+// const intervalMS = 60 * 60 * 1000
+
+// const updateSW = registerSW({
+//   onRegistered(r) {
+//     r && setInterval(() => {
+//       r.update()
+//     }, intervalMS)
+//   },
+// })
 // registerPWA()
 async function enableMocking() {
   // if (import.meta.env.PROD) {
