@@ -20,7 +20,7 @@ async function enableMocking() {
 
   return worker.start({
     serviceWorker: {
-      url: '/mockServiceWorker.js', // import.meta.env.DEV ? '/mockServiceWorker.js' : '/sw.js',
+      url: import.meta.env.DEV ? '/dev-sw.js?dev-sw' : '/sw.js',
     },
   })
 }
