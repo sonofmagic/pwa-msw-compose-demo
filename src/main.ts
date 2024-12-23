@@ -1,10 +1,12 @@
+import { registerSW } from 'virtual:pwa-register'
 // import { registerSW } from 'virtual:pwa-register'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { registerPWA, router } from './router'
 import './style.scss'
 
-registerPWA()
+registerSW({ immediate: true })
+// registerPWA()
 async function enableMocking() {
   // if (import.meta.env.PROD) {
   //   return
