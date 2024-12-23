@@ -13,10 +13,13 @@ export default defineConfig({
     vue(),
     VitePWA({
       // strategies: 'injectManifest',
-
+      disable: true,
       registerType: 'autoUpdate',
       workbox: {
         importScripts: ['/mockServiceWorker.js'],
+      },
+      devOptions: {
+        enabled: true,
       },
     }),
     {
