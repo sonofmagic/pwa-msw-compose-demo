@@ -7,7 +7,7 @@ const { msg = 'icebreaker' } = defineProps<{
 <template>
   <div>
     <h1> {{ msg }}</h1>
-    <div>FFF</div>
+    <div>高科技客家话</div>
   </div>
 </template>
 

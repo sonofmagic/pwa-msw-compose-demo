@@ -15,12 +15,12 @@ export default defineConfig({
       // strategies: 'injectManifest',
       // disable: true,
       registerType: 'autoUpdate',
-      workbox: {
-        importScripts: ['/mockServiceWorker.js'],
-        skipWaiting: true,
-        globIgnores: ['**\/node_modules\/**\/*', 'mockServiceWorker.js'],
+      // workbox: {
+      //   importScripts: ['/mockServiceWorker.js'],
+      //   skipWaiting: true,
+      //   globIgnores: ['**\/node_modules\/**\/*', 'mockServiceWorker.js'],
 
-      },
+      // },
       manifest: {
         name: 'My Awesome App',
         short_name: 'MyApp',
