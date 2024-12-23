@@ -43,7 +43,7 @@ export default defineConfig({
         enabled: true,
         type: 'module',
       },
-      injectRegister: null,
+      // injectRegister: null,
     }),
     {
       name: 'test-plugin',
