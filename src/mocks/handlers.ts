@@ -1,3 +1,4 @@
+import { fakerZH_CN as faker } from '@faker-js/faker'
 import { http, HttpResponse } from 'msw'
 
 export const handlers = [
@@ -5,9 +6,19 @@ export const handlers = [
   http.get('https://example.com/user', () => {
     // ...and respond to them using this JSON response.
     return HttpResponse.json({
-      id: 'c7b3d8e0-5e0b-4b0f-8b3a-3b9f4b3d3b3d',
-      firstName: 'John',
-      lastName: 'Maverick',
+      id: 400,
+      firstName: faker.person.firstName(),
+      lastName: faker.person.lastName(),
     })
+  }),
+  http.get('https://example.com/userlist', () => {
+    // ...and respond to them using this JSON response.
+    return HttpResponse.json(
+      Array.from({ length: 10 }).map((_, idx) => ({
+        id: idx,
+        firstName: faker.person.firstName(),
+        lastName: faker.person.lastName(),
+      })),
+    )
   }),
 ]

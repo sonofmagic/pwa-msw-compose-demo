@@ -41,5 +41,3 @@ mocking.then(() => {
 }).catch((err) => {
   console.error(err)
 })
-
-render()
