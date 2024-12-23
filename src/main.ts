@@ -34,11 +34,12 @@ function render() {
   }
 }
 
-const mocking = enableMocking()
-
-mocking.then(() => {
-  console.log('mocking finished!')
-  render()
-}).catch((err) => {
-  console.error(err)
-})
+render()
+// const mocking = enableMocking()
+// console.log(mocking)
+// mocking.then(() => {
+//   console.log('mocking finished!')
+//   render()
+// }).catch((err) => {
+//   console.error(err)
+// })
